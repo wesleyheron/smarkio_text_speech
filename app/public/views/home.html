@@ -1,0 +1,69 @@
+<div class="py-5 text-center">
+  <h2>Smarkio</h2>
+  <h5>Teste prático de programação</h5>
+  <p class="lead">Aplicação desenvolvida como teste para desenvolvedor na Smarkio</p>
+</div>
+
+<div class="row">
+  <div class="col-md-12 text-center">
+    <div class="alert alert-success" id="succeedMessage" role="alert" ng-show="showSucceedAddedComment">
+      <span>{{message}}</span>
+    </div>
+    <div class="alert alert-danger" id="errorMessage" role="alert" ng-show="showErrorAddedComment">
+      <span>{{message}}</span>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+
+  <div class="col-md-6 order-md-2 mb-4">
+    <h4 class="d-flex justify-content-between align-items-center mb-3">
+      <span class="text-muted">Comentários</span>
+      <span class="badge badge-secondary badge-pill">{{count}}</span>
+    </h4>
+
+
+    <div class="alert alert-primary" role="alert" ng-show="showFirstComment">
+      Cadastre um novo comentário!
+    </div>
+
+    <div class="alert alert-warning" role="alert" ng-show="showErroMessage">
+      {{errorMessage}}
+    </div>
+
+    <ul class="list-group mb-3">
+      <li class="list-group-item d-flex justify-content-between lh-condensed" ng-repeat="comment in comments">
+        <div>
+          <p>
+            <small class="text-muted">{{comment.comment}}</small>  
+          </p>
+          <p>
+            <audio controls >
+              <source id="audioSource" ng-src="{{comment.audio}}">
+            </audio> 
+          </p>             
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+
+  <div class="col-md-6 order-md-1">
+    <h4 class="mb-3">Comentário</h4>
+    <form class="needs-validation" name="formComment" novalidate="" ng-submit="add()">
+      <div class="row">
+        <div class="col-md-12 mb-6">
+          <textarea class="form-control" rows="3" ng-model="comment.comment" required></textarea>
+        </div>
+      </div>
+      <hr class="mb-2">
+      <button class="btn btn-primary btn-lg btn-block" ng-disabled="formComment.$invalid" type="submit">
+        Cadastrar
+      </button>
+    </form>
+  </div>
+</div>
+
+
