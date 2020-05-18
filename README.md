@@ -1,6 +1,7 @@
 <h1>Smarkio DevTeste</h1>
 
 <p>Teste desenvolvido como desafio para seletivo de desenvolvedor da Smarkio</p>
+<p>Stack usada: Server(<strong>Nodejs + Express + Sequelize (MySQL)</strong>) + Front-end(<strong>AngularJS</strong>)</p>
 <p>Para execurar o projeto:</p>
 <p>Você precisará instalar o MySQL Server. Configurar um usuário e senha para utilizar-lo.</p>
 <p>Execute o seguinte script no <strong>MySQL</strong>: <code>create database smarkio_test;</code></p>
